@@ -1,0 +1,29 @@
+<head>
+  <title>yaa</title>
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>yaa</h1>
+			<form class="new-resolution">
+				<input type="text" name="title" placeholder="a new yaa">
+				<input type="submit" value="Submit">
+			</form>
+		</header>
+		
+			<ul>	
+			{{#each resolutions}}
+				{{> resolution}}
+			{{/each}}	
+			</ul>
+	</div>
+</body> 
+
+<template name="resolution">
+   <li class="{{#if checked}}checked{{/if}}">
+   <input type="checkbox" checked="{{checked}}" class="toggle-checked">
+   <span class ="text">{{title}}</span>      
+   <button class="delete">remove</button>
+   </li>
+</template>
